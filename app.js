@@ -44,6 +44,21 @@ app.listen(port, () => {
 
 
 /**
+ * MONGODB CONEXION BDD
+ */
+const mongoose = require('mongoose');
+const dbName = "mevnApp";
+const uri = 'mongodb://localhost:27017/' + dbName;
+const options = { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true };
+mongoose.connect(uri, options).then(
+    /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
+    () => { console.log('Conectado a DB') },
+    /** handle initial connection error */
+    err => { err }
+);
+
+
+/**
     Cors is useful to do reuest HTTP from other domain
     es una característica de seguridad del navegador que restringe las solicitudes HTTP de origen cruzado
 
