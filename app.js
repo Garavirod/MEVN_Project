@@ -23,10 +23,17 @@ app.use(express.urlencoded({ extended: true }));
 //     res.send('Hello World!');
 // });
 
+/*************************** 
+ * ROUTES
+ ****************************/
+
+app.use('/api', require('./routes/nota'));
+
+
 const history = require('connect-history-api-fallback'); // Middleware para Vue.js router modo history
 app.use(history()); //This goes before
 app.use(express.static(path.join(__dirname, 'public'))); //path/public
-/********************************** */
+
 
 
 /********************************** */
