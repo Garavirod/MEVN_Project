@@ -60,10 +60,10 @@ const mongoose = require('mongoose');
 // const uri = 'mongodb://localhost:27017/' + dbName;
 
 // Conexión en la nube a la base de datos
-const user = 'User_GaraNotes';
-const pasword = 'QAUJBOCGHcShqml3';
-const dbname = 'Notes';
-const uri = `mongodb+srv://${user}:${password}@garanotes-1fqta.mongodb.net/${dbname}?retryWrites=true&w=majority`
+// const user = 'User_GaraNotes';
+// const pasword = 'QAUJBOCGHcShqml3';
+// const dbname = 'Notes';
+const uri = 'mongodb+srv://User_GaraNotes:QAUJBOCGHcShqml3@garanotes-1fqta.mongodb.net/mevnApp?retryWrites=true&w=majority'
 
 const options = { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true };
 mongoose.connect(uri, options).then(
