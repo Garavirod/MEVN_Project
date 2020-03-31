@@ -53,9 +53,18 @@ app.listen(port, () => {
 /**
  * MONGODB CONEXION BDD
  */
+
 const mongoose = require('mongoose');
-const dbName = "mevnApp";
-const uri = 'mongodb://localhost:27017/' + dbName;
+// Conexión local a la base de datos
+// const dbName = "mevnApp";
+// const uri = 'mongodb://localhost:27017/' + dbName;
+
+// Conexión en la nube a la base de datos
+const user = 'User_GaraNotes';
+const pasword = 'QAUJBOCGHcShqml3';
+const dbname = 'Notes';
+const uri = `mongodb+srv://${user}:${password}@garanotes-1fqta.mongodb.net/${dbname}?retryWrites=true&w=majority`
+
 const options = { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true };
 mongoose.connect(uri, options).then(
     /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
